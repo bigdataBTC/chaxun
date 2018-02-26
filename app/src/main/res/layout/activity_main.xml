@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="feedBackAdapter"
+            type="com.xinmang.feedbackproject.adapter.FeedBackAdapter" />
+
+        <variable
+            name="rvLayoutManager"
+            type="android.support.v7.widget.LinearLayoutManager" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:id="@+id/top_ll"
+        android:focusableInTouchMode="true"
+        tools:context="com.xinmang.feedbackproject.MainActivity">
+
+
+        <TextView
+            android:id="@+id/request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:padding="20dp"
+            android:text="请求"
+            android:visibility="gone" />
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/package_name_input"
+                    android:hint="请输入搜索的包名"
+                    android:textSize="12sp"
+                    android:background="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="20dp"/>
+
+                <EditText
+                    android:id="@+id/vesrion_name_input"
+                    android:textSize="12sp"
+                    android:hint="请输入搜索的版本号"
+                    android:background="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:padding="20dp"/>
+
+                <EditText
+                    android:id="@+id/app_name_input"
+                    android:textSize="12sp"
+                    android:hint="请输入搜索的App名字"
+                    android:background="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp">
+
+                <com.xinmang.feedbackproject.view.PopSpinnerView
+                    android:id="@+id/package_name"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    app:textName="选择包名" />
+
+
+                <com.xinmang.feedbackproject.view.PopSpinnerView
+                    android:id="@+id/vesrion_name"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    app:textName="选择版本" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:layout_below="@id/top"
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rc"
+            app:adapter="@{feedBackAdapter}"
+            app:layoutManager="@{rvLayoutManager}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+
+
+
+    </RelativeLayout>
+</layout>

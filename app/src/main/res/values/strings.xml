@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">查看反馈信息</string>
+    <string name="app_name_item">App的名称:</string>
+    <string name="package_name">App的包名:</string>
+    <string name="app_version">App的反馈的版本:</string>
+
+    <string name="phone_brond">手机的品牌:</string>
+    <string name="phone_model">手机的型号:</string>
+    <string name="phone_verison">手机的系统:</string>
+
+    <string name="contact_information">联系方式:</string>
+
+</resources>
